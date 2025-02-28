@@ -1,0 +1,745 @@
+/* General Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  color: #fff; /* Light text for dark theme */
+  background-color: #121212; /* Fallback background color */
+  background-image: url('images/modern-dark-leather-desk-with-mockup-place-keyboard-black-background-top-view_67155-16371.avif');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Keeps the background fixed while scrolling */
+}
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700; /* Bold for headings */
+}
+/* Fade-In Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.hero h2, .hero p, .hero .btn {
+  animation: fadeIn 2s ease-in-out;
+}
+/* Slide-In Animation */
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.hero h2 {
+  animation: slideIn 1.5s ease-out;
+}
+/* Button Hover Effect */
+.btn {
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+  background: #005bb5;
+  transform: scale(1.05);
+}
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header */
+header {
+  background: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
+  color: #fff;
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: background 0.3s ease; /* Smooth background transition */
+}
+
+header.scrolled {
+  background: rgba(0, 0, 0, 0.9); /* Darker background on scroll */
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 24px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+}
+
+header h1 .white-text {
+  color: #fff; /* White color for "Hashir" */
+}
+
+header h1 .blue-text {
+  color: #0073e6; /* Blue color for "Nadeem" */
+}
+
+header nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 20px; /* Space between links */
+}
+
+header nav ul li {
+  position: relative;
+}
+
+header nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+  transition: color 0.3s ease;
+}
+
+header nav ul li a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #0073e6, #00bfff); /* Gradient underline */
+  transition: width 0.3s ease;
+}
+
+header nav ul li a:hover {
+  color: #0073e6; /* Blue color on hover */
+}
+
+header nav ul li a:hover::after {
+  width: 100%; /* Expand underline on hover */
+}
+
+/* Active link styling */
+header nav ul li a.active {
+  color: #0073e6; /* Blue color for active link */
+}
+
+header nav ul li a.active::after {
+  width: 100%; /* Full underline for active link */
+}
+/* Hero Section */
+.hero {
+  background: rgba(0, 0, 0, 0.6); /* Semi-transparent overlay */
+  color: #fff;
+  padding: 150px 0;
+  text-align: center;
+}
+
+.hero h2 {
+  font-size: 48px;
+  margin-bottom: 20px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  color: #fff;
+  text-shadow:
+    0 0 5px #0073e6,
+    0 0 10px #0073e6,
+    0 0 20px #0073e6,
+    0 0 40px #0073e6,
+    0 0 80px #0073e6;
+  animation: flicker 1.5s infinite alternate;
+}
+
+@keyframes flicker {
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+    text-shadow:
+      0 0 5px #0073e6,
+      0 0 10px #0073e6,
+      0 0 20px #0073e6,
+      0 0 40px #0073e6,
+      0 0 80px #0073e6;
+  }
+  20%, 24%, 55% {
+    text-shadow: none;
+  }
+}
+
+.hero p {
+  font-size: 20px;
+  margin-bottom: 30px;
+  font-family: 'Open Sans', sans-serif;
+  opacity: 0; /* Start invisible */
+  animation: fadeInGlow 2.5s ease-in-out forwards;
+}
+
+@keyframes fadeInGlow {
+  0% {
+    opacity: 0;
+    transform: translateY(20px); /* Slight upward movement */
+    text-shadow: 0 0 10px rgba(0, 115, 230, 0); /* Start with no glow */
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0);
+    text-shadow: 0 0 10px rgba(0, 115, 230, 0.5); /* Subtle glow */
+  }
+  100% {
+    opacity: 1;
+    text-shadow: 0 0 20px rgba(0, 115, 230, 0.8); /* Stronger glow */
+  }
+}
+
+.hero .btn {
+  background: #0073e6;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.hero .btn:hover {
+  background: #005bb5;
+  transform: scale(1.05);
+}
+.hero .btn {
+  opacity: 0; /* Initially hidden */
+  animation: fadeIn 0.5s ease-in-out 2.5s forwards; /* Appears after 2.5 seconds */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* About Section */
+.about {
+  padding: 80px 0;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.7); /* Semi-transparent overlay */
+}
+
+.about h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.about p {
+  font-size: 18px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Projects Section */
+.projects {
+  padding: 80px 0;
+  background: rgba(0, 0, 0, 0.7); /* Semi-transparent overlay */
+  text-align: center;
+}
+
+.projects h2 {
+  font-size: 36px;
+  margin-bottom: 40px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  color: #fff;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  padding: 0 20px;
+}
+
+.project-card {
+  background: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(10px); /* Adds a blur effect */
+}
+
+.project-card:hover {
+  transform: translateY(-10px); /* Lift card on hover */
+  box-shadow: 0 8px 16px rgba(0, 115, 230, 0.5); /* Glow effect */
+}
+
+.project-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover; /* Ensures images fit nicely */
+  border-bottom: 2px solid #0073e6; /* Accent border */
+}
+
+.project-card h3 {
+  font-size: 24px;
+  margin: 20px 0 10px;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+}
+
+.project-card p {
+  font-size: 16px;
+  color: #ccc;
+  padding: 0 20px 20px;
+  line-height: 1.6;
+  text-align: left;
+}
+
+/* Add a subtle animation to the cards */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.project-card {
+  opacity: 0; /* Start invisible */
+  animation: fadeInUp 0.5s ease-in-out forwards;
+}
+
+/* Add delays to each card */
+.project-card:nth-child(1) { animation-delay: 0.2s; }
+.project-card:nth-child(2) { animation-delay: 0.4s; }
+.project-card:nth-child(3) { animation-delay: 0.6s; }
+
+.project-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #0073e6, #00bfff);
+  border-radius: 17px; /* Slightly larger to cover the card */
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-card:hover::before {
+  opacity: 1; /* Show gradient border on hover */
+}
+
+
+/* Contact Section */
+.contact {
+  padding: 80px 0;
+  background: rgba(0, 0, 0, 0.7); /* Semi-transparent overlay */
+  text-align: center;
+}
+
+.contact h2 {
+  font-size: 36px;
+  margin-bottom: 40px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  color: #fff;
+}
+
+.contact form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact input,
+.contact textarea {
+  padding: 15px;
+  border: 1px solid #444;
+  border-radius: 10px;
+  font-size: 16px;
+  background: rgba(255, 255, 255, 0.1); /* Semi-transparent input background */
+  color: #fff;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact input::placeholder,
+.contact textarea::placeholder {
+  color: #ccc; /* Light gray placeholder text */
+}
+
+.contact input:focus,
+.contact textarea:focus {
+  border-color: #0073e6; /* Blue border on focus */
+  box-shadow: 0 0 10px rgba(0, 115, 230, 0.5); /* Glow effect on focus */
+  outline: none;
+}
+
+.contact textarea {
+  resize: vertical; /* Allow vertical resizing */
+  min-height: 150px;
+}
+
+.contact .btn {
+  background: #0073e6;
+  color: #fff;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.contact .btn:hover {
+  background: #005bb5; /* Darker blue on hover */
+  transform: scale(1.05); /* Slight scale-up on hover */
+}
+.contact form {
+  opacity: 0; /* Start invisible */
+  animation: fadeInUp 1s ease-in-out forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.contact .message {
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  text-align: center;
+}
+
+.contact .message.success {
+  background: #4CAF50; /* Green for success */
+  color: #fff;
+}
+
+.contact .message.error {
+  background: #f44336; /* Red for error */
+  color: #fff;
+}
+
+/* Footer */
+footer {
+  background: rgba(0, 0, 0, 0.8); /* Semi-transparent black */
+  color: #fff;
+  padding: 40px 0;
+  text-align: center;
+}
+
+footer .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+footer .footer-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+footer .footer-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+footer .footer-info p {
+  margin: 0;
+  font-size: 16px;
+  color: #ccc;
+}
+
+footer .footer-info a {
+  color: #0073e6;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer .footer-info a:hover {
+  color: #00bfff; /* Light blue on hover */
+}
+
+footer .social-links {
+  display: flex;
+  gap: 20px;
+}
+
+footer .social-links a {
+  color: #fff;
+  font-size: 24px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+footer .social-links a:hover {
+  color: #0073e6; /* Blue on hover */
+  transform: translateY(-5px); /* Lift icon on hover */
+}
+
+
+@media (max-width: 767px) {
+  /* General Styles */
+  body {
+    font-size: 14px; /* Smaller font size for mobile */
+  }
+
+  h1 {
+    font-size: 20px; /* Smaller heading for mobile */
+  }
+
+  h2 {
+    font-size: 24px; /* Smaller heading for mobile */
+  }
+
+  h3 {
+    font-size: 20px; /* Smaller heading for mobile */
+  }
+
+  /* Header */
+  header .container {
+    flex-direction: column; /* Stack logo and nav vertically */
+    align-items: center;
+  }
+
+  header nav ul {
+    flex-direction: column; /* Stack nav links vertically */
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  /* Hero Section */
+  .hero {
+    padding: 100px 0; /* Reduce padding for mobile */
+  }
+
+  .hero h2 {
+    font-size: 32px; /* Smaller heading for mobile */
+  }
+
+  .hero p {
+    font-size: 16px; /* Smaller text for mobile */
+  }
+
+  .hero .btn {
+    padding: 10px 20px; /* Smaller button for mobile */
+  }
+
+  /* About Section */
+  .about {
+    padding: 50px 0; /* Reduce padding for mobile */
+  }
+
+  .about p {
+    font-size: 16px; /* Smaller text for mobile */
+  }
+
+  /* Projects Section */
+  .projects {
+    padding: 50px 0; /* Reduce padding for mobile */
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr; /* Single column for mobile */
+    gap: 20px;
+  }
+
+  .project-card {
+    margin-bottom: 20px; /* Add space between cards */
+  }
+
+  /* Contact Section */
+  .contact {
+    padding: 50px 0; /* Reduce padding for mobile */
+  }
+
+  .contact form {
+    padding: 0 10px; /* Add padding for better spacing */
+  }
+
+  .contact input,
+  .contact textarea {
+    padding: 10px; /* Smaller padding for inputs */
+  }
+
+  .contact .btn {
+    padding: 10px 20px; /* Smaller button for mobile */
+  }
+
+  /* Footer */
+  footer {
+    padding: 20px 0; /* Reduce padding for mobile */
+  }
+
+  footer .footer-content {
+    gap: 10px; /* Reduce gap for mobile */
+  }
+
+  footer .footer-info p {
+    font-size: 14px; /* Smaller text for mobile */
+  }
+
+  footer .social-links a {
+    font-size: 20px; /* Smaller icons for mobile */
+  }
+}
+
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* General Styles */
+  body {
+    font-size: 16px; /* Medium font size for tablets */
+  }
+
+  h1 {
+    font-size: 24px; /* Medium heading for tablets */
+  }
+
+  h2 {
+    font-size: 32px; /* Medium heading for tablets */
+  }
+
+  h3 {
+    font-size: 24px; /* Medium heading for tablets */
+  }
+
+  /* Hero Section */
+  .hero {
+    padding: 120px 0; /* Medium padding for tablets */
+  }
+
+  .hero h2 {
+    font-size: 40px; /* Medium heading for tablets */
+  }
+
+  .hero p {
+    font-size: 18px; /* Medium text for tablets */
+  }
+
+  /* About Section */
+  .about {
+    padding: 60px 0; /* Medium padding for tablets */
+  }
+
+  .about p {
+    font-size: 18px; /* Medium text for tablets */
+  }
+
+  /* Projects Section */
+  .projects {
+    padding: 60px 0; /* Medium padding for tablets */
+  }
+
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr); /* Two columns for tablets */
+    gap: 20px;
+  }
+
+  /* Contact Section */
+  .contact {
+    padding: 60px 0; /* Medium padding for tablets */
+  }
+
+  .contact form {
+    padding: 0 20px; /* Add padding for better spacing */
+  }
+
+  /* Footer */
+  footer {
+    padding: 30px 0; /* Medium padding for tablets */
+  }
+
+  footer .footer-info p {
+    font-size: 16px; /* Medium text for tablets */
+  }
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none; /* Hide by default */
+  flex-direction: column;
+  gap: 5px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #fff;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Show hamburger menu on mobile */
+@media (max-width: 767px) {
+  .hamburger {
+    display: flex;
+  }
+
+  header nav {
+    display: none; /* Hide nav by default */
+    width: 100%;
+  }
+
+  header nav.active {
+    display: block; /* Show nav when active */
+  }
+
+  header nav ul {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+  }
+}

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Name - Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Open+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+        <div class="container">
+          <h1>
+            <span class="white-text">Hashir</span>
+            <span class="blue-text">Nadeem</span>
+          </h1>
+          <button class="hamburger" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <nav>
+            <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#projects">Projects</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="container">
+        <h2>Welcome to My Portfolio</h2>
+        <p>
+          I'm a passionate web developer who loves building amazing websites.
+        </p>
+        <a href="#projects" class="btn">View My Work</a>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+      <div class="container">
+        <h2>About Me</h2>
+        <p>
+          Hi, I'm Hashir Nadeem, I am a passionate and skilled web developer
+          with over three years of experience in both front-end and back-end
+          development. I specialize in creating dynamic, user-friendly websites
+          and web applications, ensuring a seamless experience across all
+          platforms. Throughout my career, I have worked on a variety of
+          real-time projects, delivering solutions that meet client needs while
+          staying up-to-date with the latest industry trends and technologies.
+          My goal is to craft websites that not only look great but also
+          function efficiently and securely. Let's build something amazing
+          together!
+        </p>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+      <div class="container">
+        <h2>My Projects</h2>
+        <div class="project-grid">
+          <div class="project-card">
+            <img src="images/project1.png" alt="Project 1" />
+            <h3>Project 1</h3>
+            <p>
+              A comprehensive web-based application designed to streamline and
+              manage school operations effectively. This system includes
+              dashboards for administrators, teachers, and students, enabling
+              role-based access to features such as student management,
+              attendance tracking, grade reports, and more. The interface is
+              user-friendly and responsive, with a fully functional back-end
+              built on PHP and MySQL to handle data securely and efficiently.
+            </p>
+          </div>
+          <div class="project-card">
+            <img src="images/project2.png" alt="Project 2" />
+            <h3>Project 2</h3>
+            <p>
+              A fully responsive and dynamic real estate platform that allows
+              users to browse property listings, view detailed information, and
+              contact agents directly. The site includes advanced search
+              functionality, property filtering, and an intuitive user interface
+              for both buyers and sellers. Built with a robust back-end using
+              PHP and MySQL, the website ensures secure data handling and
+              efficient management of property listings and user inquiries.
+            </p>
+          </div>
+          <div class="project-card">
+            <img src="images/project3.png" alt="Project 3" />
+            <h3>Project 3</h3>
+            <p>
+              A professional web solution developed for an oil trading company
+              to manage and showcase their services and products. The website
+              features a modern, user-friendly design with sections for detailed
+              company information, market updates, and real-time pricing. With
+              secure PHP-based back-end integration.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+          <h2>Contact Me</h2>
+          <form action="https://formspree.io/f/xdkaqelv" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required />
+            <input type="email" name="email" placeholder="Your Email" required />
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit" class="btn">Send Message</button>
+            <div class="message"></div> <!-- For success/error messages -->
+          </form>
+        </div>
+      </section>
+
+    <footer>
+        <div class="container">
+          <div class="footer-content">
+            <div class="footer-info">
+              <p>&copy; 2023 Hashir Nadeem. All rights reserved.</p>
+              <p>Email: <a href="mailto:hashir.nadeem009@gmail.com">hashir.nadeem009@gmail.com</a></p>
+              <p>Phone: <a href="tel:+923478084055">+923478084055</a></p>
+            </div>
+            <div class="social-links">
+              <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+              <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+              <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+    <script src="scripts.js"></script>
+  </body>
+</html>
